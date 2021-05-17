@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Office;
 use App\Models\VisaApplication;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VisaApplicationController extends Controller
 {
@@ -24,7 +26,13 @@ class VisaApplicationController extends Controller
      */
     public function create()
     {
-        //
+        $offices = Office::select('command', 'id')->get();
+
+        $user = Auth()->user();
+
+        // dd($user);
+
+        return view('visa_applications.create', compact('offices', 'user'));
     }
 
     /**
@@ -35,7 +43,20 @@ class VisaApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // $request->validate([ 
+        //     'email' => Auth()->user()->email, 
+        // ]);
+
+        VisaApplication::create($request->all());
+
+        return redirect()->route('dashboard')
+            ->with('success', 'Visa Application started successfully.');
+    }
+
+    public function editApplication()
+    {
+        return view('visa_applications.edit');
     }
 
     /**
@@ -60,6 +81,19 @@ class VisaApplicationController extends Controller
         //
     }
 
+    public function editUserInfo()
+    {
+        $offices = Office::select('command', 'id')->get();
+
+        $user = Auth()->user();
+
+        $visaApplication = VisaApplication::where('user_id', $user->id)->first();
+
+        // dd($visaApplication);
+
+        return view('visa_applications.create', compact('offices', 'user', 'visaApplication'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -69,7 +103,19 @@ class VisaApplicationController extends Controller
      */
     public function update(Request $request, VisaApplication $visaApplication)
     {
-        //
+
+        $visaApplication->update($request->all());
+
+        return redirect()->route('dashboard')
+            ->with('success', 'Visa Application started successfully.');
+    }
+
+    public function upsert(Request $request)
+    {
+        VisaApplication::updateOrCreate(['email' => $request->email], $request->all());
+
+        return redirect()->route('dashboard')
+        ->with('success', 'Visa Application started successfully.');
     }
 
     /**

@@ -20,6 +20,7 @@
     </script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
+
     
 {{-- <link rel="stylesheet" href="css/style.css"> --}}
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -30,6 +31,9 @@
 <!-- Styles -->
 <link rel="stylesheet" href="{{ asset('css/font-face.css') }}">
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
@@ -59,7 +63,7 @@
 <a href="#"><span class="fa fa-home mr-3"></span>Bio</a>
 </li>
 <li class="active">
-<a href="#"><span class="fa fa-home mr-3"></span>Apply for Visa</a>
+<a href="{{ route('editUserInfo') }}"><span class="fa fa-home mr-3"></span>Apply for Visa</a>
 </li>
 {{-- <li>
 <a href="#"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span> Download</a>
