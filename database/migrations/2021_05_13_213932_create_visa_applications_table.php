@@ -20,11 +20,11 @@ class CreateVisaApplicationsTable extends Migration
             $table->string('other_names');
             $table->bigInteger('phone');
             $table->string('email');
+            $table->date('date_of_birth');
             $table->string('address');
             $table->string('state_of_residence');
             $table->string('lga_of_origin');
             $table->string('state_of_origin');
-            $table->date('date_of_birth');
             $table->string('evidence_business_status')->nullable();
             $table->string('evidence_business_link')->nullable();
             $table->string('evidence_of_cbn_payment')->nullable();
