@@ -100,7 +100,7 @@
                 </div>  
                 <div class="col-xs-12 col-sm-12 col-md-4">
                     <strong>State of Residence</strong>
-                    <input type="text" name="state_of_residence" class="form-control" value="{{ $visaApplication->state_of_origin ?? '' }}" required>
+                    <input type="text" name="state_of_residence" class="form-control" value="{{ $visaApplication->state_of_residence ?? '' }}" required>
                 </div>  
             </div>  
             <div class="form-row mb-3">
