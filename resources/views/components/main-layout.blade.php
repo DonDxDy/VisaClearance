@@ -69,7 +69,7 @@
 <a href="#"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span> Download</a>
 </li> --}} 
 <li>
-<a href="#"><span class="fa fa-trophy mr-3"></span>Documents</a>
+<a href="{{ route('editDocument') }}"><span class="fa fa-document mr-3"></span>Documents</a>
 </li>
 <li>
 <a href="#"><span class="fa fa-cog mr-3"></span> Edit Information</a>

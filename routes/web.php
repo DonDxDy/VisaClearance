@@ -28,6 +28,8 @@ Route::get('edit-application', [VisaApplicationController::class, 'editApplicati
 
 Route::get('edit-information', [VisaApplicationController::class, 'editUserInfo'])->name('editUserInfo');
 Route::put('upsert', [VisaApplicationController::class, 'upsert'])->name('upsert');
+Route::get('upload-documents', [VisaApplicationController::class, 'editDocument'])->name('editDocument');
+Route::put('upload-documents', [VisaApplicationController::class, 'uploadDocument'])->name('uploadDocument');
 
 Route::resource('offices', OfficeController::class);
 Route::resource('visa-applications', VisaApplicationController::class);
