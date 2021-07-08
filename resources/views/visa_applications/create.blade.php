@@ -41,17 +41,17 @@
         @method('put')
 
         <div class=" mx-auto  col-md-10">
-            <div class="outline-success mb-3 d-flex" > 
+            <div class="outline-danger mb-3 d-flex" > 
                 <div style="clip-path: polygon(50% 0, 55% 50%, 50% 100%, 0 100%, 0% 50%, 0 1%);" >
-                    <div class="bg-success" style="height: 50px; width: 600px; line-height: 50px;"> <span class="ml-3 font-weight-bolder h5">1. Submit Application Online</span>
+                    <div class="bg-danger" style="height: 50px; width: 600px; line-height: 50px;"> <span class="ml-3 font-weight-bolder h5">1. Submit Application Online</span>
                     </div>
                 </div>
                 <div>
-                    <div class="" style="height: 50px; width: 500px; line-height: 50px; margin-left: -250px;"> <span class="ml-3 font-weight-bolder h5 text-success">2. Submit Documents</span></div>
+                    <div class="" style="height: 50px; width: 500px; line-height: 50px; margin-left: -250px;"> <span class="ml-3 font-weight-bolder h5 text-danger">2. Submit Documents</span></div>
                     {{-- <div class="" style="height: 50px; width: 500px; line-height: 50px; margin-left: -250px;"> <span class="ml-3 font-weight-bolder h5 text-success">2. Review and Confirm Payment</span></div> --}}
                 </div>
             </div>
-            <p class="bg-success" style="width: 100%; height: 40px; line-height: 40px;"> <span class="ml-3 font-weight-bolder h5 text-light">Applicant Details</span> </p>
+            <p class="bg-danger" style="width: 100%; height: 40px; line-height: 40px;"> <span class="ml-3 font-weight-bolder h5 text-light">Applicant Details</span> </p>
            
             <div class="form-row mb-3">
                 <div class="col-xs-12 col-sm-12 col-md-4">
@@ -86,7 +86,7 @@
                 </div>  
             </div>  
             <div class="form-row mb-3">
-                <div class="col-xs-12 col-sm-12 col-md-2">
+                <div class="col-xs-12 col-sm-12 col-md-3">
                     <strong>Gender</strong>
                     <select name="gender" class="form-control" required>
                         <option value="{{ $visaApplication->gender ?? '' }}">{{ $visaApplication->gender ?? 'Select your Gender' }}</option>
@@ -94,7 +94,7 @@
                         <option value="Female">Female</option>
                     </select>
                 </div>  
-                <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="col-xs-12 col-sm-12 col-md-5">
                     <strong>Address</strong>
                     <input type="text" name="address" class="form-control" value="{{ $visaApplication->address ?? '' }}" required>
                 </div>  
@@ -137,7 +137,7 @@
                 </div>  
             </div>  
             <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                <button type="submit" class="btn btn-success">Next</button>
+                <button type="submit" class="btn btn-danger">Next</button>
             </div>
         </div>
 
